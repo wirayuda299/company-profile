@@ -5,9 +5,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { urlFor } from "@/lib/sanity/utils/sanityImage";
 import type { FC } from "react"
 import Image from "next/image";
-import { urlFor } from "@/lib/sanity/utils/sanityImage";
 
 interface IProps {
   images: string[]
@@ -16,7 +16,7 @@ interface IProps {
 const Banner: FC<IProps> = ({ images }) => {
 
   return (
-    <div className="w-full h-full ">
+    <section className="w-full h-full ">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -35,7 +35,7 @@ const Banner: FC<IProps> = ({ images }) => {
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <Image
-              className="object-cover w-full h-screen "
+              className="object-cover w-full object-bottom h-screen "
               src={urlFor(image).url()}
               alt="banner"
               priority
@@ -47,7 +47,7 @@ const Banner: FC<IProps> = ({ images }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };
 export default Banner

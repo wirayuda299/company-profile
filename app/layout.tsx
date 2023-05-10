@@ -1,13 +1,5 @@
-import Navbar from '@/components/Navbar'
-import './globals.css'
-import { Work_Sans } from 'next/font/google'
+import Navigation from "@/components/Drawer/Navigation"
 
-const workSans = Work_Sans({
-  display: 'swap',
-  weight: ['400'],
-  subsets: ['latin-ext']
-
-})
 type Props = {
   children: React.ReactNode
 }
@@ -20,8 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={workSans.className}>
-        <Navbar />
+      <body>
         {children}
       </body>
     </html>
