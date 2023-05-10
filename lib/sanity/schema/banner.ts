@@ -10,8 +10,8 @@ export default {
 
     },
     {
-      name: 'bannerImages',
-      title: 'BannerImages',
+      name: 'images',
+      title: 'Images',
       type: 'array',
       of: [{type: 'image'}]
     }

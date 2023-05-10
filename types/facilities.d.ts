@@ -4,7 +4,7 @@ export type Facilities ={
   description: string;
   _id: string;
   _updatedAt: string;
-  facilityname: string;
+  title: string;
   image: string
   _createdAt: string;
 }

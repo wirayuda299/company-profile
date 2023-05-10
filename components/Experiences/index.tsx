@@ -20,23 +20,25 @@ const Experiences: FC<IProps> = ({ facilities }) => {
               <Image
                 className="w-full h-auto rounded object-cover aspect-square md:aspect-video"
                 src={urlFor(facility.image).url()}
-                alt={facility.facilityname}
+                alt={facility.title}
                 width={800}
                 height={800}
+                priority
+                fetchPriority={'auto'}
                 placeholder="blur"
                 blurDataURL={urlFor(facility.image).url()}
               />
               <div className="w-full">
                 <h3 className="text-3xl text-center text-[#d4a355] uppercase font-light p-5">
-                  {facility.facilityname}
+                  {facility.title}
                   <p className="text-base lowercase text-gray-500 py-3">
                     {facility.description}
                   </p>
                 </h3>
                 <button
                   type="button"
-                  name={facility.facilityname}
-                  title={facility.facilityname}
+                  name={facility.title}
+                  title={facility.title}
                   className="text-center w-full">
                   <Link
                     as={`/facilities/${facility._id}`}

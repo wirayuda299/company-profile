@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <div className='w-full h-full'>
-      <Banner images={banner ? banner[0].bannerImages : []} />
+      <Banner images={banner ? banner[0].images : []} />
       <Experiences facilities={facilities} />
       <div className="w-full h-full">
         <RoomSuites roomSuites={roomSuites as RoomSuitesType[]} />

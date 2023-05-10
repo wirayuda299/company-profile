@@ -1,11 +1,11 @@
 export default {
-  name: 'experiences',
-  title: 'Experiences',
+  name: 'facilities',
+  title: 'Facilities',
   type: 'document',
   fields: [
     {
-      name: 'facilityname',
-      title: 'Facility Name',
+      name: 'title',
+      title: 'Title',
       type: 'string'
     },
     {

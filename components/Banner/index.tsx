@@ -39,6 +39,7 @@ const Banner: FC<IProps> = ({ images }) => {
               src={urlFor(image).url()}
               alt="banner"
               priority
+              fetchPriority={'high'}
               quality={100}
               about="banner"
               width={1920}
