@@ -18,7 +18,7 @@ const RoomSuites: FC<IProps> = ({ roomSuites }) => {
   return (
     <section className="w-full h-full bg-gray-200 mt-6">
       <Title />
-      <div className="container mx-auto w-full">
+      <div className="max-w-4xl mx-auto w-full">
         <Swiper
           spaceBetween={100}
           effect="fade"

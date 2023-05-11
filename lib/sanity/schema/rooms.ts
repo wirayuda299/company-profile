@@ -1,49 +1,77 @@
 export default {
-   name: 'rooms',
-    title: 'Rooms', 
-    type: 'document',
-    fields: [
-      {
-        name: 'name',
-        title: 'Name',
-        type: 'string',
-      },
-      {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'name',
-          maxLength: 96,
-        }
-      },
-      {
-        name: 'description',
-        title: 'Description',
-        type: 'string',
-      },
-      {
-        name: 'image',
-        title: 'Image',
-        type: 'array',
-        of: [{type: 'image'}]
-      },
-      {
-        name: 'overview',
-        title: 'Overview',
-        type: 'string',
-      },
-      {
-        name: 'amenities',
-        title: 'Amenities',
-        type: 'array',
-        of: [{type: 'string'}]
-      },
-      {
-        name: 'roomDetails',
-        title: 'RoomDetails',
-        type: 'array',
-        of: [{type: 'string'}]
-      },
-    ]
+  name: 'rooms',
+  title: 'Rooms',
+  type: 'document',
+  fields: [
+    {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 96,
+      }
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+    },
+    {
+      name: 'banner',
+      title: 'Banner',
+      type: 'array',
+      of: [{type: 'image'}]
+    },
+    {
+      name: 'bedType',
+      title: 'BedType',
+      type: 'string'
+    },
+    {
+      name: 'bathroom',
+      title:'Bathroom',
+      type: 'string'
+    },
+    {
+      name: 'internet',
+      title:'Internet',
+      type: 'string'
+    },
+    {
+      name: 'size',
+      title:'Size',
+      type: 'string'
+    },
+    {
+      name: 'location',
+      title:'Location',
+      type: 'string'
+    },
+    {
+      name: 'view',
+      title:'View',
+      type: 'string'
+    },
+    {
+      name: 'numberOfRooms',
+      title:'NumberOfRooms',
+      type: 'string'
+    },
+    {
+      name: 'clubBenefits',
+      title:'ClubBenefits',
+      type: 'string'
+    },
+    {
+      name: 'max',
+      title:'Max',
+      type: 'string'
+    },
+  ]
 }

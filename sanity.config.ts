@@ -1,5 +1,5 @@
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
+import { deskTool} from 'sanity/desk';
 import banner from '@/lib/sanity/schema/banner';
 import rooms from './lib/sanity/schema/rooms';
 import experiences from './lib/sanity/schema/experiences';

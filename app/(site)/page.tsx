@@ -15,9 +15,9 @@ export default async function Home() {
     <div className='w-full h-full'>
       <Banner images={banner ? banner[0].images : []} />
       <Experiences facilities={facilities} />
-      <div className="w-full h-full">
+      <section className="w-full h-full">
         <RoomSuites roomSuites={roomSuites as RoomSuitesType[]} />
-      </div>
+      </section>
     </div>
   )
 }

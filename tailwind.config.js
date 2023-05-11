@@ -15,12 +15,17 @@ module.exports = {
         slideOut: {
           "0%": { left: "0%", display: 'block' },
           '100%': { left: "-100%", display: 'none' },
+        },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         }
       },
     
       animation: {
         slideIn: "slideIn 0.3s ease-out forwards",
         slideOut: "slideOut 0.3s ease-out forwards",
+        fadeIn: "fadeIn 0.3s ease-out forwards",
       }
     },
   },
