@@ -1,9 +1,12 @@
 import { sanityClient } from "@/config/sanity";
-import Banner from "@/components/Banner";
 import { RoomDetail } from "@/types/roomDetail";
-import { Tab } from "@/components/Tab/Tab";
-import Overview from '@/components/RoomDetail/Overview'
-import Amenities from "@/components/Amenities/Amenities";
+import { getRoomType } from "@/helper/getRoomType";
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import('@/components/Banner'))
+const Overview = dynamic(() => import('@/components/RoomDetail/Overview'))
+const Amenities = dynamic(() => import('@/components/Amenities/Amenities'))
+const Thumbnails = dynamic(() => import('@/components/Thumbnails/thumbnails'))
+const Tab = dynamic(() => import('@/components/Tab/Tab'))  
 
 type Params = {
     params: {
@@ -13,10 +16,8 @@ type Params = {
 }
 
 export default async function RoomId({ params }: Params) {
-    const slug = params.slug
-    const response = await sanityClient.fetch(`*[_type == "rooms" && slug.current == "${slug}"]`) as RoomDetail[]
-    
-
+    const response = await sanityClient.fetch(`*[_type == "rooms" && slug.current == "${params.slug}"]`) as RoomDetail[]
+    const roomsType = await getRoomType()
     return (
         <div className='w-full h-full'>
             <Banner images={response[0]?.banner} />
@@ -40,7 +41,19 @@ export default async function RoomId({ params }: Params) {
                             size={response[0]?.size}
                             view={response[0]?.view}
                         />
-                        <Amenities amenities={response[0].amenities}/>
+                        <Amenities amenities={response[0].amenities} />
+                    </div>
+                </div>
+                <div className="max-w-6xl mx-auto p-5 mt-5">
+                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-5">
+                        {roomsType?.filter(room => room.slug.current !== params.slug).map(room => (
+                            <Thumbnails
+                                name={room.name}
+                                slug={room.slug.current}
+                                thumbnail={room.thumbnail}
+                                key={room._id}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

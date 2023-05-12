@@ -28,7 +28,7 @@ const Banner: FC<IProps> = ({ images }) => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         className=" w-full h-full"
       >
@@ -39,8 +39,9 @@ const Banner: FC<IProps> = ({ images }) => {
               src={urlFor(image).url()}
               alt="banner"
               priority
+              sizes="100vw"
               fetchPriority={'high'}
-              quality={100}
+              quality={80}
               about="banner"
               width={1920}
               height={1080}

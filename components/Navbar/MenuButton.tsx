@@ -8,11 +8,11 @@ interface Props {
 
 const MenuButton: FC<Props> = ({ classes }) => {
   const { isMenuModalOpen, toggleMenuModal } = useStore(useMenuModalStore)
-  const genericHamburgerLine = `h-1 w-8 my-1 rounded-full bg-black transition ease transform duration-300`;
+  const genericHamburgerLine = `h-1 w-7 my-1 rounded-full bg-black transition ease transform duration-300`;
 
   return (
     <button
-      className={`flex flex-col h-12 w-14 lg:hidden justify-center items-center group ${classes}`}
+      className={`flex flex-col  lg:hidden justify-center items-center group ${classes}`}
       onClick={() => toggleMenuModal()}
     >
       <div

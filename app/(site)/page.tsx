@@ -1,10 +1,12 @@
 import { getBanner } from '@/helper/getBanner'
-import Banner from '@/components/Banner'
-import Experiences from '@/components/Experiences'
 import { getMainFacility } from '@/helper/getMainFacility'
 import { getRoomSuites } from '@/helper/getRoomSuites'
-import RoomSuites from '@/components/RoomSuites'
 import { RoomSuites as RoomSuitesType } from '@/types/roomSuites'
+import dynamic from 'next/dynamic'
+
+const Banner = dynamic(() => import('@/components/Banner'))
+const Experiences = dynamic(() => import('@/components/Experiences'))
+const RoomSuites = dynamic(() => import('@/components/RoomSuites'))
 
 export default async function Home() {
   const banner = await getBanner()

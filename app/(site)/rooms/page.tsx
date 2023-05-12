@@ -1,9 +1,8 @@
-import Banner from "@/components/Banner";
 import { getBannerRoomSuites } from "@/helper/getBanner"
 import { getRoomType } from "@/helper/getRoomType";
-import { urlFor } from "@/lib/sanity/utils/sanityImage";
-import Image from "next/image";
-import Link from "next/link";
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import('@/components/Banner'))
+const Thumbnails = dynamic(() => import('@/components/Thumbnails/thumbnails'))
 
 export default async function RoomsPage() {
   const banner = await getBannerRoomSuites()
@@ -20,19 +19,12 @@ export default async function RoomsPage() {
           </h1>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-5">
             {roomsType?.map(room => (
-              <Link href={`rooms/${room.slug.current}`} key={room._id} className="w-full h-full">
-                <figure>
-                  <Image
-                  className="w-full object-cover h-full"
-                    src={urlFor(room.thumbnail).url()}
-                    alt={room.name}
-                    width={500}
-                    height={500}
-                    priority
-                  />
-                  <figcaption className='text-center font-semibold text-xl uppercase p-3 text-[#d4a355]'>{room.name}</figcaption>
-                </figure>
-              </Link>
+              <Thumbnails
+                name={room.name}
+                slug={room.slug.current}
+                thumbnail={room.thumbnail}
+                key={room._id}
+              />
             ))}
 
           </div>

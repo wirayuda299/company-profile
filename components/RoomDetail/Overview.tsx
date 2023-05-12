@@ -14,11 +14,11 @@ interface Overview {
     numberOfRooms: string
     clubbenefits: string
     maxPeople: string
-
 }
 
-const Overview: FC<Overview> = ({ desc, bedType, clubbenefits, bathroom, internet, maxPeople, location, size, view, numberOfRooms,
-}: Overview) => {
+const Overview: FC<Overview> = (props: Overview) => {
+    const { desc, bedType, clubbenefits, bathroom, internet, maxPeople, location, size, view, numberOfRooms,
+    } = props
     const { selectedTab } = useStore(useSelectedTabStore)
     if (selectedTab !== 'overview') return null
     const dataLists = [
