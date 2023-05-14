@@ -6,7 +6,7 @@ const Banner = dynamic(() => import('@/components/Banner'))
 const Overview = dynamic(() => import('@/components/RoomDetail/Overview'))
 const Amenities = dynamic(() => import('@/components/Amenities/Amenities'))
 const Thumbnails = dynamic(() => import('@/components/Thumbnails/thumbnails'))
-const Tab = dynamic(() => import('@/components/Tab/Tab'))  
+const Tab = dynamic(() => import('@/components/Tab/Tab'))
 
 type Params = {
     params: {
@@ -48,6 +48,7 @@ export default async function RoomId({ params }: Params) {
                     <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-5">
                         {roomsType?.filter(room => room.slug.current !== params.slug).map(room => (
                             <Thumbnails
+                                page="rooms"
                                 name={room.name}
                                 slug={room.slug.current}
                                 thumbnail={room.thumbnail}

@@ -35,7 +35,7 @@ const Banner: FC<IProps> = ({ images }) => {
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <Image
-              className="object-cover w-full object-bottom h-screen "
+              className="object-cover w-full aspect-video h-screen "
               src={urlFor(image).url()}
               alt="banner"
               priority

@@ -11,7 +11,7 @@ const Logo: FC = () => {
       <div className="w-full flex justify-between lg:justify-center">
         <Link href={'/'} as={'/'}>
           <Image
-            className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16"
+            className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 aspect-square object-contain"
             src={logo}
             alt="logo"
             width={50}

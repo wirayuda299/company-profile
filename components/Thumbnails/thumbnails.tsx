@@ -7,19 +7,20 @@ interface IProps {
   slug: string
   thumbnail: string
   name: string
+  page: string
 }
 
-const Thumbnails: FC<IProps> = ({ slug, thumbnail, name }) => {
+const Thumbnails: FC<IProps> = ({ slug, thumbnail, name, page }) => {
   return (
-    <Link href={`rooms/${slug}`} className="w-full h-full">
+    <Link href={`${page}/${slug}`} className="w-full h-full">
       <figure>
         <Image
-          className="w-full object-cover h-full"
+          className="w-full object-cover h-full aspect-square "
           src={urlFor(thumbnail).url()}
           alt={name}
-          sizes="500px"
-          width={500}
-          height={500}
+          sizes="800px"
+          width={800}
+          height={800}
           priority
           placeholder="blur"
           blurDataURL={urlFor(thumbnail).url()}

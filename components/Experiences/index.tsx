@@ -1,5 +1,5 @@
 import type { FC } from "react"
-import Title from "./Title";
+import Title from "../Title/Title";
 import { Facilities } from "@/types/facilities";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanity/utils/sanityImage";
@@ -12,7 +12,9 @@ interface IProps {
 const Experiences: FC<IProps> = ({ facilities }) => {
   return (
     <section className="container mx-auto  h-full">
-      <Title />
+      <Title title="Hotel Experiences">
+        <p className="text-base text-center font-normal p-5">Nestled within an unspoiled river valley and overlooking the enchanting forests of Payangan, the 149-room Padma Resort Ubud is an expansive and tranquil luxury destination. Located north of Ubud, Bali’s celebrated capital of arts and culture, Padma Resort Ubud features all the five-star amenities and facilities one would expect from the renowned Padma hospitality brand, including stunning views from every room or suite, a first-class spa, an awe-inspiring 89-metre infinity swimming pool with panoramic views, signature world-class dining and modern event venues. Our Ubud resort is idyllic and the perfect place to refresh your mind and body, and to explore the wonders of north and central Bali.</p>
+      </Title>
       <div className="w-full h-full">
         <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-center">
           {facilities.map((facility, index) => (
